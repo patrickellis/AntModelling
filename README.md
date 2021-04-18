@@ -17,5 +17,5 @@ The model implements a 2D diffusion grid for each of the two pheromones involved
 One objective of the project is to model emergent behaviour, in this case formation of efficient routes to and from food sources close to an ant colony. Only surface level charactersitics have been programmed, e.g. position, velocity, direction of motion, antennae length and ant length. 
 
 <p align="center">
-  <img src = "https://github.com/patrickellis/Portfolio/blob/master/images/docs/ant-gif-2.gif" style="padding-top:100px; width:350px;height:350px;" width="650" />
+  <img src = "https://github.com/patrickellis/Portfolio/blob/master/images/docs/anti-gif-2.gif" style="padding-top:100px; width:350px;height:350px;" width="650" />
 </p>
