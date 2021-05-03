@@ -7,7 +7,7 @@ function [agt]=migrate(agt,cn)
 %If a fox has not eaten, it will pick a random migration direction
 %If it will leave the edge of the model, the direction is incremented by 45
 %degrees at it will try again (up to 8 times)
-%modified by D Walker 11/4/08
+
 
 global IT_STATS N_IT ENV_DATA PARAM
 

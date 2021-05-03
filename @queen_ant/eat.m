@@ -27,8 +27,7 @@ function [agt,eaten]=eat(agt,cn)
    %    MESSAGE.dead - n x1 array containing ones for agents that have died
    %    in the current iteration
    
-     
-%Modified by D Walker 3/4/08
+
 
 global  IT_STATS N_IT MESSAGES ENV_DATA
 

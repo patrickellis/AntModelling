@@ -1,12 +1,5 @@
 function ecolab(size,nf,nsteps,fmode,outImages)
 
-%ECO_LAB  agent-based predator-prey model, developed for
-%demonstration purposes only for University of Sheffield module
-%COM3001/6006/6009
-
-%AUTHOR Dawn Walker d.c.walker@sheffield.ac.uk
-%Created April 2008
-
 %ecolab(size,nr,nf,nsteps)
 %size = size of model environmnet in km (sugested value for plotting
 %purposes =50)
@@ -97,48 +90,50 @@ function ecolab(size,nf,nsteps,fmode,outImages)
         ny=300;
         vis=0.1;                         %Diffusion coefficient/viscocity
         dt=0.5; 
-        figure(1);
-        clf;
-        subplot(2,1,1);
-        colormap(gca,'default');
-       
+       % figure(1);
+        %clf;
+        %subplot(2,1,1);
+        %colormap(gca,'default');
+        
         %u = ENV_DATA.U_FIELD_VARIABLE;
         dx=200/(nx-1);                     %Width of space step(x)
         dy=300/(ny-1);                     %Width of space step(y)
         x=0:dx:200;                        %Range of x(0,2) and specifying the grid points
         y=0:dy:300;                        %Range of y(0,2) and specifying the grid points
         %figure(1);
-        h=surf(x,y,u','EdgeColor','interp');       %plotting the field variable
-        shading interp
-        axis ([0 200 0 200 0 0.5])
-        axis equal
-        title({['Pheromone A plot'];['time (\itt) = ',num2str(n_it*dt)]})
-        xlabel('Spatial co-ordinate (x) \rightarrow')
-        ylabel('{\leftarrow} Spatial co-ordinate (y)')
-        zlabel('Transport property profile (u) \rightarrow')
-        view(3);
-        %c = colorbar;
-        %set(h, [0 1])
-        shading interp
-        zlim([0 1]);
+        %h=surf(x,y,u','EdgeColor','interp');       %plotting the field variable
+        %shading interp
+        %axis ([0 200 0 200 0 0.5])
+        %axis equal
+        %title({['Pheromone A plot'];['time (\itt) = ',num2str(n_it*dt)]})
+        %xlabel('Spatial co-ordinate (x) \rightarrow')
+        %ylabel('{\leftarrow} Spatial co-ordinate (y)')
+        %zlabel('Transport property profile (u) \rightarrow')
+        %view(3);
+        %%%%c = colorbar;
+        %%%%set(h, [0 1])
+        %shading interp
+        %zlim([0 1]);
         %light
         %lighting gouraud
-        subplot(2,1,2);
+        
+        
+        %subplot(2,1,2);
         h=surf(x,y,u_B','EdgeColor','interp');       %plotting the field variable
-        %shading interp
-        
-        axis ([0 200 0 200 0 0.5])
+       %shading interp;
+        view(2);
+        %%%%axis ([0 200 0 200 0 0.5])
         axis equal
-        colormap(gca,'summer');
+        colormap(gca,'turbo');
         
-        title({'Pheromone B plot'})
-        xlabel('Spatial co-ordinate (x) \rightarrow')
-        ylabel('{\leftarrow} Spatial co-ordinate (y)')
-        zlabel('Transport property profile (u) \rightarrow')
-        set(gcf,'Position',[100 100 1000 1000]);
-
+        %%%%%title({'Pheromone B plot'})
+        %%%%%xlabel('Spatial co-ordinate (x) \rightarrow')
+        %%%%%ylabel('{\leftarrow} Spatial co-ordinate (y)')
+        %%%%%zlabel('Transport property profile (u) \rightarrow')
+        set(gcf,'Position',[100 100 1695 1000]);
+   
         %% plot circle for food
-        C = [100,175];
+        C = [100,225];
         r = 25.;
 
 
@@ -158,20 +153,26 @@ function ecolab(size,nf,nsteps,fmode,outImages)
         end
         hold off
         
-       
+        set(gca,'XTick',[], 'YTick', [])
         drawnow; 
+        
+    
+        DirectoryPath = 'C:\Users\patri\Desktop\antcolonyimages';
+        whereToStore=fullfile(DirectoryPath, ['filename' num2str(N_IT) '.png']);
+        saveas(gcf,whereToStore);
 
+        
         refreshdata(h);
-        figure(2);
+        %figure(2);
         clf;
         %subplot(2,1,1),plot((1:N_IT+1),nr(1:N_IT+1),'-r'); 
         %subplot(2,1,2),
-        plot((1:N_IT),nf(1:N_IT),'b-',(1:N_IT),nr(1:N_IT),'r');
+        %plot((1:N_IT),nf(1:N_IT),'b-',(1:N_IT),nr(1:N_IT),'r');
         %axis([0 100 0 100])
-        title('Number of active foragers and nest seekers')
-        xlabel('Iteration')
-        ylabel('Number of ants')
-        set(gcf,'Position',[1500 100 500 500]);
+        %title('Number of active foragers and nest seekers')
+        %xlabel('Iteration')
+        %ylabel('Number of ants')
+        %set(gcf,'Position',[1500 100 500 500]);
         %IT_STATS.area(:,1) = IT_STATS.tot_r;
         % IT_STATS.area(:,2) = IT_STATS.tot_f;
         %t = IT_STATS.area;

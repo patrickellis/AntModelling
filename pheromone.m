@@ -69,13 +69,9 @@ right_B = u_B(round(right_x),round(right_y));
 
 %left_c = [left_A, left_B];
 %right_c = [right_A,right_B];
-if left_B > right_B
-    %disp("FUCK YES LEFT B LESS THAN RIGHT B");
-end
 
-if right_B > left_B
-    %disp("fuck yes right B less than left B")
-end
+
+
 posl = [left_x,left_y];
 posl = double(posl);
 

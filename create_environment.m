@@ -47,7 +47,7 @@ ENV_DATA.radius = 25;
 if test == 1
     % one food source
     isinside = (x - 100).^2 + (y - 200).^2 <= 25^2;
-    ENV_DATA.food(isinside) = ENV_DATA.food(isinside) + 200;
+    ENV_DATA.food(isinside) = ENV_DATA.food(isinside) + 250;
     
     ENV_DATA.food1x = 100;
     ENV_DATA.food1y = 200;

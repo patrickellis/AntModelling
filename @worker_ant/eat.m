@@ -28,7 +28,7 @@ function [agt,eaten]=eat(agt,cn)
    %    in the current iteration
    
      
-%Modified by D Walker 3/4/08
+
 
 global  IT_STATS N_IT MESSAGES ENV_DATA
 
