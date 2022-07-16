@@ -10,7 +10,7 @@ The model uses pheromone diffusion in order to demonstrate path formation in ant
 The model implements a 2D diffusion grid for each of the two pheromones involved in the path formation process. Each time step, ants deposit a fixed amount of pheromone at their exact [x,y] coordinates. 2D Laplace Transformations are then applied to each deposition for each timestep since they occurred, which are summed into one grid. See below for visualisations.
 
 <p align="center">
-  <img src = "https://github.com/patrickellis/Portfolio/blob/master/images/docs/ant-gif.gif" style="padding-top:100px; width:350px;height:350px;" width="650" />
+  <img src = "https://github.com/patrickellis/Portfolio/blob/master/images/docs/ant-gif.gif" style="padding-top:100px; width:450px;height:350px;" width="650" />
 </p>
 
 ## Emergent Behaviour 
